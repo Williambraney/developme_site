@@ -17,3 +17,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css/'));
 });
 
+gulp.task('minify-sass', gulp.series('sass', 'minify-css'));
+gulp.task('watch', function () {
+    gulp.watch(['scss/**/*.scss'], gulp.series('minify-sass'));
+});
