@@ -11,7 +11,7 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./scss/styles.scss')
+    return gulp.src('scss/styles.scss')
         .pipe(sass())
         .pipe(rename('styles.css'))
         .pipe(gulp.dest('./css/'));
